@@ -181,4 +181,4 @@ def generate_avg_salary_bar_graph():
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8050)
