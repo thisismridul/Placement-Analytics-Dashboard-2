@@ -1,0 +1,44 @@
+/* Add your custom CSS styles here */
+/* For example, changing the background color and text color */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the four columns */
+.four.columns {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the pie chart container */
+#pie-chart {
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS for fade in/out animation */
+.nav-enter {
+    opacity: 0;
+}
+
+.nav-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.nav-exit {
+    opacity: 1;
+}
+
+.nav-exit-active {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
