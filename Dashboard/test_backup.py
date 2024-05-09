@@ -20,6 +20,7 @@ df2019 = pd.read_csv(data_url5)
 
 # Initialize the Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server=app.server
 
 # Define the layout
 app.layout = dbc.Container(
