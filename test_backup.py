@@ -9,7 +9,7 @@ import plotly.graph_objs as go
 # Load data from direct URLs to raw CSV files
 data_url1 = 'Placement Statistics-2023.csv'
 df2023 = pd.read_csv(data_url1)
-data_url2 = '/Users/mridulsmac/Desktop/Dashboard/Placement Statistics-2022.csv'
+data_url2 = 'Placement Statistics-2020.csv'
 df2022 = pd.read_csv(data_url2)
 data_url3 = '/Users/mridulsmac/Desktop/Dashboard/Placement Statistics-2021.csv'
 df2021 = pd.read_csv(data_url3)
