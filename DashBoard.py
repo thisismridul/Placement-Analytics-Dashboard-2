@@ -1,12 +1,15 @@
 import streamlit as st
-from test_backup import app  # Import your Dash app object
 
 def main():
-    # Title of your app
-    st.title("Placement Analytics Dashboard")
+    
 
-    # Run your Dash app within Streamlit
-    app.run_server(port=8001)
+    # Embedding Dash app using iframe
+    st.markdown(
+        """
+        <iframe src="http://localhost:8050/"  style="border: none; width: 1000px; height: 800px;  "></iframe>
+        """,
+        unsafe_allow_html=True
+    )
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
