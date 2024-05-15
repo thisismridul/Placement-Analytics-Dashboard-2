@@ -82,5 +82,10 @@ def main():
                 "</div>".format(round(df_year['CTC'].mean(), 2)),
                 unsafe_allow_html=True
             )
+        st.subheader('Top 10 Recruiters (Pie Chart)')
+        top_10_companies = df_year.sort_values(by='No. Of Offers', ascending=False).head(10)
+        fig = px.pie(top_10_companies, names='Name of Company', values='No. Of Offers', title='Top 10 Recruiters')
+        st.plotly_chart(fig)
+        
 if __name__ == "__main__":
     main()
