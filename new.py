@@ -40,17 +40,47 @@ def main():
         year = int(page)
         df_year = globals()[f"df{year}"]  # Get DataFrame dynamically
         st.header(f'Placement Statistics for {year}')
-        st.subheader('Summary Statistics')
 
-        st.write("Companies Visited:", df_year['Name of Company'].nunique())
-        st.write("Highest CTC:", df_year['CTC'].max())
-        st.write("Total Number of Offers:", df_year['No. Of Offers'].sum())
-        st.write("Average CTC:", round(df_year['CTC'].mean(), 2))
+        col1, col2, col3, col4 = st.columns(4)  # Create 4 columns
 
-        st.subheader('Top 10 Recruiters (Pie Chart)')
-        top_10_companies = df_year.sort_values(by='No. Of Offers', ascending=False).head(10)
-        fig = px.pie(top_10_companies, names='Name of Company', values='No. Of Offers', title='Top 10 Recruiters')
-        st.plotly_chart(fig)
+        with col1:
+            st.markdown(
+                "<div style='padding: 10px; border-radius: 10px; background-color: #4040FF; "
+                "height: 150px;'>"
+                "<h3 style='text-align: center;'>Companies Visited</h3>"
+                "<p style='text-align: center;'>{}</p>"
+                "</div>".format(df_year['Name of Company'].nunique()),
+                unsafe_allow_html=True
+            )
 
+        with col2:
+            st.markdown(
+                "<div style='padding: 10px; border-radius: 10px; background-color: #4040FF; "
+                "height: 150px;'>"
+                "<h3 style='text-align: center;'>Highest CTC</h3>"
+                "<p style='text-align: center;'>{}</p>"
+                "</div>".format(df_year['CTC'].max()),
+                unsafe_allow_html=True
+            )
+
+        with col3:
+            st.markdown(
+                "<div style='padding: 10px; border-radius: 10px; background-color: #4040FF;"
+                "height: 150px;'>"
+                "<h3 style='text-align: center;'>Total Offers</h3>"
+                "<p style='text-align: center;'>{}</p>"
+                "</div>".format(df_year['No. Of Offers'].sum()),
+                unsafe_allow_html=True
+            )
+
+        with col4:
+            st.markdown(
+                "<div style='padding: 10px; border-radius: 10px; background-color: #4040FF;"
+                "height: 150px;'>"
+                "<h3 style='text-align: center;'>Average CTC</h3>"
+                "<p style='text-align: center;'>{}</p>"
+                "</div>".format(round(df_year['CTC'].mean(), 2)),
+                unsafe_allow_html=True
+            )
 if __name__ == "__main__":
     main()
